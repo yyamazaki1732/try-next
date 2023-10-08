@@ -1,6 +1,5 @@
-import Navbar from "@/components/common/header";
-import Footer from "@/components/common/footer";
-import Link from "next/link";
+import Navbar from "@/components/pages/common/header";
+import Footer from "@/components/pages/common/footer";
 
 export default function Layout({ children }) {
   return (
