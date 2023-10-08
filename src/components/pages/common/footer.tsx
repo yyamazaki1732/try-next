@@ -1,5 +1,5 @@
 import Link from "next/link";
-const links = ["about", "service", "contact"];
+const links = ["about", "anchorLink", "contact"];
 
 export default function Footer() {
   return (

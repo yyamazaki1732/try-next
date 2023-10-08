@@ -7,14 +7,15 @@ import {
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
-import Block from "@/components/pages/service/block";
+// import Block from "@/components/pages/anchorLink/block";
+import Block from "@/components/pages/ anchorLink/block";
 const blockArray = [
   { id: "corp", heading: "法人設立" },
   { id: "human", heading: "人事" },
   { id: "calc", heading: "会計" },
   { id: "genel", heading: "法務" },
 ];
-export default function Service() {
+export default function AnchorLink() {
   useEffect(() => {
     // Updating scrollSpy when the component mounts.
     scrollSpy.update();
@@ -31,7 +32,7 @@ export default function Service() {
 
   return (
     <div>
-      <h1 className="text-30">Service</h1>
+      <h1 className="text-30">AnchorLink</h1>
       <ul className="flex">
         {blockArray.map((block) => (
           <li className="border border-gray-800 [&:not(:first-child)]:border-l-0">

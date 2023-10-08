@@ -7,7 +7,7 @@ export default function Footer() {
         <Links path="/" />
         <Links path="/useEffect" />
         <Links path="/about" />
-        <Links path="/service" />
+        <Links path="/anchorLink" />
       </nav>
     </header>
   );
