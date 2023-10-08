@@ -1,11 +1,12 @@
-import UseState from "@/components/pages/useState/useState";
-import CodeBox from "@/components/pages/common/codeBox";
+import { CodeBox } from "@/components/pages/common/index";
+import { WindowSize } from "@/components/pages/useState/index";
 
 export default function Page() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">UseState / index</h1>
-      <UseState />
+      <CodeBox heading="pointermoveに伴いbg-colorを変化">
+        <WindowSize />
+      </CodeBox>
     </>
   );
 }
