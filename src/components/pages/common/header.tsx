@@ -5,6 +5,7 @@ export default function Footer() {
     <header className="py-8 px-12 text-2xl border-b border-blue-900">
       <nav className="flex gap-x-4">
         <Links path="/" />
+        <Links path="/useEffect" />
         <Links path="/about" />
         <Links path="/service" />
       </nav>
