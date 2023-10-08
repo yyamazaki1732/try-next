@@ -1,28 +1,28 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-const pathToHome = "Next.js";
 
+const PATH_TO_HOME = "Next.js";
 export function Links({ path }) {
-  const pathname = usePathname();
+  const pathname = usePathname().split("/");
 
-  function CapitalizeFirstString(string) {
+  function capitalizeFirstString(string) {
     if (string === "/") {
-      return pathToHome;
+      return PATH_TO_HOME;
     } else {
+      string = string.slice(1);
       let first = string.charAt(0).toUpperCase();
       let rest = string.slice(1);
       return first + rest;
     }
   }
 
-  const pathCapitalized = CapitalizeFirstString(path);
+  const pathCapitalized = capitalizeFirstString(path);
+  const isActivePath = pathname[1] === path.slice(1) && pathname[1] !== "";
 
   return (
     <Link
-      className={`link ${
-        pathname === `/${path}` ? "text-pink-600 underline" : ""
-      }`}
-      href={path}
+      className={`link ${isActivePath ? "text-pink-600 underline" : ""}`}
+      href={`${path}`}
     >
       {pathCapitalized}
     </Link>
