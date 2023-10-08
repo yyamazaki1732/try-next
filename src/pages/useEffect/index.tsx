@@ -1,23 +1,22 @@
-import BgChange from "@/components/pages/useEffect/bgChange";
-import Counter from "@/components/pages/useEffect/counter";
-import NameChange from "@/components/pages/useEffect/nameChange";
+import {
+  NameChange,
+  Counter,
+  BgChange,
+} from "@/components/pages/useEffect/index";
+import CodeBox from "@/components/pages/common/codeBox";
 
 export default function useEffect() {
   return (
     <>
-      <div className="p-4 border border-yellow-900 [&:not(:first-child)]:mt-4">
-        <h2>pointermoveに伴いbg-colorを変化</h2>
+      <CodeBox heading="pointermoveに伴いbg-colorを変化">
         <NameChange />
-      </div>
-      <div className="p-4 border border-yellow-900 [&:not(:first-child)]:mt-4">
-        <h2>pointermoveに伴いbg-colorを変化</h2>
+      </CodeBox>
+      <CodeBox heading="pointermoveに伴いbg-colorを変化">
         <Counter />
-      </div>
-
-      <div className="p-4 border border-yellow-900 [&:not(:first-child)]:mt-4">
-        <h2>pointermoveに伴いbg-colorを変化</h2>
+      </CodeBox>
+      <CodeBox heading="pointermoveに伴いbg-colorを変化">
         <BgChange />
-      </div>
+      </CodeBox>
     </>
   );
 }

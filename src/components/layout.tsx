@@ -1,6 +1,4 @@
-import Header from "@/components/pages/common/header";
-import AsideBar from "@/components/pages/common/asideBar";
-import Footer from "@/components/pages/common/footer";
+import { Header, Footer, AsideBar } from "@/components/pages/common/index";
 
 export default function Layout({ children }) {
   return (

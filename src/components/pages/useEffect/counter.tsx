@@ -21,7 +21,6 @@ export default function Counter() {
 
   return (
     <div>
-      <h1>Learn useEffect</h1>
       <p>
         Count: {count}/ Count2: {count2}
       </p>

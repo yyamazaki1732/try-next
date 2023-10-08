@@ -31,8 +31,7 @@ export default function NameChange() {
 
   return (
     <div className="App">
-      <h1>Learn useEffect</h1>
-      <h2>Name:{`${name.firstName} ${name.lastName}`}</h2>
+      <p>Name:{`${name.firstName} ${name.lastName}`}</p>
       <div className="grid grid-cols-2 w-max gap-x-2">
         <ChangeButton func={() => handleFirstName("John")}>John</ChangeButton>
         <ChangeButton func={() => handleLastName("Joe")}>Joe</ChangeButton>
