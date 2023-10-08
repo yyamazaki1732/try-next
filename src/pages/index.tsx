@@ -22,8 +22,13 @@ const cardArray = [
 export default function Page() {
   return (
     <section className="grid grid-cols-2 gap-4">
-      {cardArray.map((card) => (
-        <Card path={card.path} title={card.title} text={card.text} />
+      {cardArray.map((card, index) => (
+        <Card
+          key={index}
+          path={card.path}
+          title={card.title}
+          text={card.text}
+        />
       ))}
     </section>
   );
