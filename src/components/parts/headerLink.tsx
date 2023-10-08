@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const PATH_TO_HOME = "Next.js";
+const PATH_TO_HOME = "Top";
 export function Links({ path }) {
   const pathname = usePathname().split("/");
 

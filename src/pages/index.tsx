@@ -1,11 +1,30 @@
-import Link from "next/link";
+import Card from "@/components/parts/card";
+
+const cardArray = [
+  { path: "ninja", title: "title", text: "text" },
+  { path: "koudan", title: "title", text: "text" },
+  { path: "zoro", title: "title", text: "text" },
+  { path: "joumon_yayoi", title: "title", text: "text" },
+  { path: "ninja", title: "title", text: "text" },
+  { path: "koudan", title: "title", text: "text" },
+  { path: "zoro", title: "title", text: "text" },
+  { path: "joumon_yayoi", title: "title", text: "text" },
+  { path: "ninja", title: "title", text: "text" },
+  { path: "koudan", title: "title", text: "text" },
+  { path: "zoro", title: "title", text: "text" },
+  { path: "joumon_yayoi", title: "title", text: "text" },
+  { path: "ninja", title: "title", text: "text" },
+  { path: "koudan", title: "title", text: "text" },
+  { path: "zoro", title: "title", text: "text" },
+  { path: "joumon_yayoi", title: "title", text: "text" },
+];
 
 export default function Page() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>
-      <p>これはNext.jsの練習用のサイトです。</p>
-      <Link href="/about">About</Link>
-    </div>
+    <section className="grid grid-cols-2 gap-4">
+      {cardArray.map((card) => (
+        <Card path={card.path} title={card.title} text={card.text} />
+      ))}
+    </section>
   );
 }
