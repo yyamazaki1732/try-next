@@ -7,7 +7,7 @@ export default function Footer() {
       <h2>footer area</h2>
       <ul>
         {links.map((link) => (
-          <li>{link}</li>
+          <li key={link}>{link}</li>
         ))}
       </ul>
     </footer>

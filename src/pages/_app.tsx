@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
-import Layout from "../components/layout";
-import "src/styles/global.scss";
-import "src/styles/tailwind.css";
+import Layout from "@/components/layout";
+import "@/styles/global.scss";
+import "@/styles/tailwind.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
