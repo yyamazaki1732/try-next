@@ -6,9 +6,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="py-8 px-12 min-h-[70vh]">
-        {children} <Link href="/">To Top</Link>
-      </main>
+      <main className="py-8 px-12 min-h-[70vh]">{children}</main>
       <Footer />
     </>
   );
