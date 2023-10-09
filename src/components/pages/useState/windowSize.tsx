@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import { gsap } from "gsap";
 
 export const WindowSize = () => {
   const [size, setSize] = useState<number | undefined>(undefined);
