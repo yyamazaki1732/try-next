@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import React from "react";
+import { gsap } from "gsap";
 
 export const WindowSize = () => {
   const [size, setSize] = useState<number | undefined>(undefined);
@@ -44,64 +46,21 @@ export default function RelaoadComponent() {
           (doMatchMedia ? "bg-yellow-800" : "bg-pink-600")
         }
       />
+      {(() => {
+        const boxes = [];
+        for (let i = 0; i < 5; i++) {
+          boxes.push(
+            <div
+              key={i}
+              className={
+                "reload-box w-8 h-8 " +
+                (doMatchMedia ? "bg-yellow-800" : "bg-pink-600")
+              }
+            ></div>
+          );
+        }
+        return boxes;
+      })()}
     </div>
   );
 }
-// export const useWindowSize = () => {
-//   const [size, setSize] = useState<number | undefined>(undefined);
-
-//   useEffect(() => {
-//     setSize(window.innerWidth);
-//     const updateSize = () => {
-//       setSize(window.innerWidth);
-//     };
-
-//     window.addEventListener("resize", updateSize);
-
-//     return () => window.removeEventListener("resize", updateSize);
-//   });
-//   return size;
-// };
-
-// const ReloadOnResize: React.FC = () => {
-//   const width = useWindowSize();
-//   const [key, setKey] = useState(Math.random());
-//   let doPassBp = false;
-//   console.log(key);
-
-//   useEffect(() => {
-//     if (width === 768) {
-//       setKey(Math.random()); // 新しいキーを設定してコンポーネントをリロード
-//     }
-//     if (width === 768) {
-//       console.log("bp 通過");
-//     }
-//     if (width === 768) {
-//       doPassBp = true;
-//     }
-//     if (width === 768) {
-//       let doPassBp = true;
-//     }
-//   }, [key]);
-
-//   return (
-//     <div key={key} className="flex gap-x-4 items-center mt-4">
-//       <p>Window width: {width}</p>
-//       {(() => {
-//         const boxes = [];
-//         for (let i = 0; i < 5; i++) {
-//           boxes.push(
-//             <div
-//               key={i}
-//               className={
-//                 "reload-box w-8 h-8 " +
-//                 (doPassBp ? "bg-yellow-800" : "bg-pink-600")
-//               }
-//             ></div>
-//           );
-//         }
-//         return boxes;
-//       })()}
-//     </div>
-//   );
-// };
