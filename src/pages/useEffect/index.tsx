@@ -8,10 +8,10 @@ import CodeBox from "@/components/pages/common/codeBox";
 export default function useEffect() {
   return (
     <>
-      <CodeBox heading="pointermoveに伴いbg-colorを変化">
+      <CodeBox heading="">
         <NameChange />
       </CodeBox>
-      <CodeBox heading="pointermoveに伴いbg-colorを変化">
+      <CodeBox heading="">
         <Counter />
       </CodeBox>
       <CodeBox heading="pointermoveに伴いbg-colorを変化">

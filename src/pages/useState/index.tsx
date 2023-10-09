@@ -4,7 +4,7 @@ import { WindowSize } from "@/components/pages/useState/index";
 export default function Page() {
   return (
     <>
-      <CodeBox heading="pointermoveに伴いbg-colorを変化">
+      <CodeBox heading="">
         <WindowSize />
       </CodeBox>
     </>
