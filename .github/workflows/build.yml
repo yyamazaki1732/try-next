@@ -31,13 +31,9 @@ jobs:
         with:
           node-version: "18.x"
       - name: Install dependencies
-        run: yarn ci
+        run: yarn install
       - name: Build
-        run: yarn run build
-      # - name: Generate
-      #   run: yarn run generate
-      # - name: Zip artifact for upload
-      #  run: cd dist && zip ../dist.zip . -r
+        run: yarn build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -53,7 +49,7 @@ jobs:
           webhook_secret: "80cfbf816f2f76e1ad2c524bbd916484"
           data: '{"single_zip":"0","domain":"kamenosuke.g.kuroco-front.app","pr":"${{ github.event.issue.pull_request.url }}",  "repository":"${{ github.repository }}", "run_id":"${{ github.run_id }}", "hash":"${{ steps.get_branch.outputs.sha }}"}'
 
-  #for Push
+  # for Push
   pushed_build:
     name: Build(pushed)
     if: (github.repository == 'yyamazaki1732/try-next' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch'))
@@ -66,13 +62,9 @@ jobs:
         with:
           node-version: "18.x"
       - name: Install dependencies
-        run: yarn ci
+        run: yarn install
       - name: Build
-        run: yarn run build
-      # - name: Generate
-      #   run: yarn run generate
-      # - name: Zip artifact for upload
-      #  run: cd dist && zip ../dist.zip . -r
+        run: yarn build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v3
         with:
