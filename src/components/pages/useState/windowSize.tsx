@@ -1,37 +1,41 @@
 import { useEffect, useState } from "react";
-
 export const WindowSize = () => {
-  const [size, setSize] = useState<number | undefined>(undefined);
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
 
   useEffect(() => {
-    setSize(window.innerWidth);
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
 
-    const updateSize = () => {
-      setSize(window.innerWidth);
-    };
-
-    window.addEventListener("resize", updateSize);
-
-    return () => window.removeEventListener("resize", updateSize);
-  }, [size]);
-  return size;
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    } else {
+      return;
+    }
+  }, []);
+  return windowSize;
 };
 
 export default function RelaoadComponent() {
   const [key, setKey] = useState(Math.random());
-  const [doMatchMedia, setDoMatchMedia] = useState(true);
+  const [bpFlag, setBpFlag] = useState(true);
 
-  let width = WindowSize();
+  let width = WindowSize().width;
   useEffect(() => {
-    if (width === 768) {
+    if (width == 768) {
+      setBpFlag((prevState) => !prevState);
       setKey(Math.random()); // 新しいキーを設定してコンポーネントをリロード
     }
-    if (width <= 768) {
-      setDoMatchMedia(true);
-    } else {
-      setDoMatchMedia(false);
-    }
   }, [width]);
+
   return (
     <div key={key}>
       <div>{width}</div>
@@ -40,8 +44,7 @@ export default function RelaoadComponent() {
         src="/parts/card/img-parts-card-zoro.png"
         alt=""
         className={
-          "reload-box w-64 h-64 " +
-          (doMatchMedia ? "bg-yellow-800" : "bg-pink-600")
+          "reload-box w-64 h-64 " + (bpFlag ? "bg-yellow-800" : "bg-pink-600")
         }
       />
       {(() => {
@@ -52,7 +55,7 @@ export default function RelaoadComponent() {
               key={i}
               className={
                 "reload-box w-8 h-8 " +
-                (doMatchMedia ? "bg-yellow-800" : "bg-pink-600")
+                (bpFlag ? "bg-yellow-800" : "bg-pink-600")
               }
             ></div>
           );
