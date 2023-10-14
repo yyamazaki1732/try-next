@@ -1,17 +1,15 @@
 import { useEffect, useState, useRef } from "react";
 import { GetWindowSize } from "@/components/pages/useState/getWindowSize";
 
-const bp = 900;
-
 export default function ReloadComponent() {
   const [key, setKey] = useState(Math.random());
 
   const {
     windowSize: { width },
-    media,
-  } = GetWindowSize(bp);
+  } = GetWindowSize();
 
   const once = useRef(true);
+  const media = width >= 900 ? true : false;
 
   useEffect(() => {
     if (width === 768 && once.current) {
@@ -22,6 +20,7 @@ export default function ReloadComponent() {
 
   return (
     <div key={key}>
+      {width}
       <img
         src="/parts/card/img-parts-card-zoro.png"
         alt=""

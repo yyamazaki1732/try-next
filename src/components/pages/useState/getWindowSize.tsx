@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-export const GetWindowSize = (bp) => {
+export const GetWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
   });
-  const [media, setMedia] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
@@ -15,12 +14,11 @@ export const GetWindowSize = (bp) => {
         width: window.innerWidth,
         height: window.innerHeight,
       });
-      setMedia(window.innerWidth >= bp ? true : false);
     };
 
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  return { windowSize, media };
+  return { windowSize };
 };
