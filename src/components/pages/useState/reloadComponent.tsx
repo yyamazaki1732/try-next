@@ -1,11 +1,35 @@
 import { useEffect, useState, useRef } from "react";
 import { GetWindowSize } from "@/components/pages/useState/getWindowSize";
 
-const ReloadComponent: React.FC = () => {
-  const [key, setKey] = useState(Math.random());
-  const once = useRef(true);
+const ReloadComponent: React.VFC = () => {
+  /**
+   * 任意の画面サイズでコンポーネントをリロードするための変数
+   * @param key
+   */
+  const [key, setKey] = useState<number>(Math.random());
+
+  /**
+   * 不要なレンダリングを避けるための変数
+   * @param once
+   */
+  const once = useRef<boolean>(true);
+
+  /**
+   * GetWindowSize()から取得した画面横幅の値
+   * @param currentWidth
+   */
   const { width: currentWidth }: { width: number } = GetWindowSize();
+
+  /**
+   * コンポーネントをリロードさせる任意の画面サイズ（px）
+   * @param BREAK_POINT
+   */
   const BREAK_POINT: number = 900;
+
+  /**
+   * 画面サイズがBREAK_POINTより大きいかどうか判断
+   * @param mediaMatches
+   */
   const mediaMatches: boolean = currentWidth >= BREAK_POINT ? true : false;
 
   useEffect(() => {
