@@ -1,1 +1,1 @@
-export { default as RelaoadComponent } from "@/components/pages/useState/relaoadComponent";
+export { default as ReloadComponent } from "@/components/pages/useState/reloadComponent";

@@ -3,7 +3,7 @@ import { GetWindowSize } from "@/components/pages/useState/getWindowSize";
 
 const bp = 900;
 
-export default function RelaoadComponent() {
+export default function ReloadComponent() {
   const [key, setKey] = useState(Math.random());
 
   const {
