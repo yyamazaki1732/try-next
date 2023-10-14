@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { GetWindowSize } from "@/components/pages/useState/getWindowSize";
 
-const ReloadComponent: React.VFC = () => {
+const ReloadComponent: React.FC = () => {
   /**
    * 任意の画面サイズでコンポーネントをリロードするための変数
    * @param key
