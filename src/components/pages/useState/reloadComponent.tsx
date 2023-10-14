@@ -15,10 +15,15 @@ const ReloadComponent: React.VFC = () => {
   const once = useRef<boolean>(true);
 
   /**
-   * GetWindowSize()から取得した画面横幅の値
-   * @param currentWidth
+   *
+   * @returns GetWindowSize()から取得した画面横幅の値
    */
-  const { width: currentWidth }: { width: number } = GetWindowSize();
+  function GetCurrentWidth() {
+    const { width: currentWidth }: { width: number } = GetWindowSize();
+    return currentWidth;
+  }
+
+  const currentWidth = GetCurrentWidth();
 
   /**
    * コンポーネントをリロードさせる任意の画面サイズ（px）
@@ -41,7 +46,7 @@ const ReloadComponent: React.VFC = () => {
 
   return (
     <div key={key}>
-      {currentWidth}
+      <p>window.innerWidth : "{currentWidth}"</p>
       <img
         src="/parts/card/img-parts-card-zoro.png"
         alt=""
