@@ -51,8 +51,7 @@ const ReloadComponent: React.VFC = () => {
         src="/parts/card/img-parts-card-zoro.png"
         alt=""
         className={
-          "reload-box w-64 h-64 " +
-          (mediaMatches ? "bg-yellow-800" : "bg-pink-600")
+          "w-64 h-64 " + (mediaMatches ? "bg-yellow-800" : "bg-pink-600")
         }
       />
     </div>
