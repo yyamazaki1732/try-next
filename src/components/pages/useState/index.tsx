@@ -1,1 +1,1 @@
-export { default as WindowSize } from "@/components/pages/useState/windowSize";
+export { default as RelaoadComponent } from "@/components/pages/useState/relaoadComponent";
