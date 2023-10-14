@@ -3,16 +3,13 @@ import { GetWindowSize } from "@/components/pages/useState/getWindowSize";
 
 export default function ReloadComponent() {
   const [key, setKey] = useState(Math.random());
-
-  const {
-    windowSize: { width },
-  } = GetWindowSize();
-
   const once = useRef(true);
-  const media = width >= 900 ? true : false;
+  const { width: currentWidth } = GetWindowSize();
+  const BREAK_POINT = 900;
+  const mediaMatches = currentWidth >= BREAK_POINT ? true : false;
 
   useEffect(() => {
-    if (width === 768 && once.current) {
+    if (currentWidth === BREAK_POINT && once.current) {
       setKey(Math.random());
       once.current = false;
     }
@@ -20,12 +17,13 @@ export default function ReloadComponent() {
 
   return (
     <div key={key}>
-      {width}
+      {currentWidth}
       <img
         src="/parts/card/img-parts-card-zoro.png"
         alt=""
         className={
-          "reload-box w-64 h-64 " + (media ? "bg-yellow-800" : "bg-pink-600")
+          "reload-box w-64 h-64 " +
+          (mediaMatches ? "bg-yellow-800" : "bg-pink-600")
         }
       />
     </div>

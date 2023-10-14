@@ -15,10 +15,9 @@ export const GetWindowSize = () => {
         height: window.innerHeight,
       });
     };
-
-    window.addEventListener("resize", handleResize);
     handleResize();
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  return { windowSize };
+  return windowSize;
 };
