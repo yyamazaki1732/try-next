@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useWindowSize } from "@/components/hooks/useWindowSize";
+import { useMediaMatches } from "@/components/hooks/useMediaMatches";
+
 
 const ReloadComponent: React.FC = () => {
   /**
@@ -15,22 +17,23 @@ const ReloadComponent: React.FC = () => {
   const once = useRef<boolean>(true);
 
   /**
-   *useWindowSize()から取得した画面横幅の値
-   * @param currentWidth
-   */
-  const { width: currentWidth } = useWindowSize();
-
-  /**
    * コンポーネントをリロードさせる任意の画面サイズ（px）
    * @param BREAK_POINT
    */
   const BREAK_POINT: number = 900;
 
   /**
-   * 画面サイズがBREAK_POINTより大きいかどうか判断
+   *useWindowSize()から取得した画面横幅の値
+   * @param currentWidth
+   */
+  const { width: currentWidth } = useWindowSize();
+
+  /**
+   *任意のブレイクポイントより画面サイズが大きかどうかを判断
    * @param mediaMatches
    */
-  const mediaMatches: boolean = currentWidth >= BREAK_POINT ? true : false;
+  const mediaMatches = useMediaMatches(BREAK_POINT, currentWidth)
+
 
   useEffect(() => {
     if (currentWidth === BREAK_POINT && once.current) {
