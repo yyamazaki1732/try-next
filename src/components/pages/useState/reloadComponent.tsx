@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useWindowSize } from "@/components/pages/useState/useWindowSize";
+import { useWindowSize } from "@/components/hooks/useWindowSize";
 
 const ReloadComponent: React.FC = () => {
   /**
