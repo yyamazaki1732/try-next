@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { GetWindowSize } from "@/components/pages/useState/getWindowSize";
+import { useWindowSize } from "@/components/pages/useState/useWindowSize";
 
 const ReloadComponent: React.FC = () => {
   /**
@@ -19,7 +19,7 @@ const ReloadComponent: React.FC = () => {
    * @returns GetWindowSize()から取得した画面横幅の値
    */
   function GetCurrentWidth() {
-    const { width: currentWidth }: { width: number } = GetWindowSize();
+    const { width: currentWidth }: { width: number } = useWindowSize();
     return currentWidth;
   }
 
