@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useMediaMatches = (BREAK_POINT: number, currentWidth: number) => {
+export default function useMediaMatches(BREAK_POINT: number, currentWidth: number) {
     const [mediaMatches, setMediaMatches] = useState(null);
 
     useEffect(() => {
