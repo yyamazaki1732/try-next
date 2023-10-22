@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useWindowSize } from "@/components/hooks/useWindowSize";
-import { useMediaMatches } from "@/components/hooks/useMediaMatches";
+import { useWindowSize, useMediaMatches } from "@/components/hooks/index";
 
 
 const ReloadComponent: React.FC = () => {
