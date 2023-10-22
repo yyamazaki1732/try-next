@@ -15,15 +15,10 @@ const ReloadComponent: React.FC = () => {
   const once = useRef<boolean>(true);
 
   /**
-   *
-   * @returns GetWindowSize()から取得した画面横幅の値
+   *useWindowSize()から取得した画面横幅の値
+   * @param currentWidth
    */
-  function GetCurrentWidth() {
-    const { width: currentWidth }: { width: number } = useWindowSize();
-    return currentWidth;
-  }
-
-  const currentWidth = GetCurrentWidth();
+  const { width: currentWidth } = useWindowSize();
 
   /**
    * コンポーネントをリロードさせる任意の画面サイズ（px）
