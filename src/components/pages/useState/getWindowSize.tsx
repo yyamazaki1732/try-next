@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-export const GetWindowSize = () => {
+export const useWindowSize = () => {
   /**
    * @param width 画面水平方向のサイズ
    * @param height 画面垂直方法のサイズ
