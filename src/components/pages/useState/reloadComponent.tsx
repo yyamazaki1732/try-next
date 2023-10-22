@@ -6,7 +6,7 @@ const ReloadComponent: React.FC = () => {
    * 任意の画面サイズでコンポーネントをリロードするための変数
    * @param key
    */
-  const [key, setKey] = useState<number>(Math.random());
+  const [key, setKey] = useState(Math.random());
 
   /**
    * 不要なレンダリングを避けるための変数
