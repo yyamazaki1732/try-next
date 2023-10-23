@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useWindowSize, useMediaMatches } from "@/components/hooks/index";
 
-
 const ReloadComponent: React.FC = () => {
   /**
    * 任意の画面サイズでコンポーネントをリロードするための変数
@@ -31,15 +30,14 @@ const ReloadComponent: React.FC = () => {
    *任意のブレイクポイントより画面サイズが大きかどうかを判断
    * @param mediaMatches
    */
-  const mediaMatches = useMediaMatches(BREAK_POINT, currentWidth)
-
+  const mediaMatches = useMediaMatches(BREAK_POINT, currentWidth);
 
   useEffect(() => {
     if (currentWidth === BREAK_POINT && once.current) {
       setKey(Math.random());
       once.current = false;
     }
-  }, [once]);
+  }, []);
 
   return (
     <div key={key}>
